@@ -1,0 +1,320 @@
+@font-face {
+  font-family: "pricedown";
+  src: url(./fonts/pricedown.otf);
+}
+
+@font-face {
+  font-family: "gta";
+  src: url(./fonts/gta.TTF);
+}
+
+@font-face {
+  font-family: "bank";
+  src: url(./fonts/bank.ttf);
+}
+
+:root {
+  --cell-size: calc(400px / 3);
+}
+
+* {
+    font-family: "bank", "gta", "pricedown", Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-weight: normal;
+    text-shadow:#000 1px 1px;
+}
+
+body {
+    background-color: #000;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+.flex-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#board {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: relative; 
+}
+
+#board form {
+  width: 400px;
+  height: 30px;
+  background-color: #000c;
+}
+
+#board form input {
+  display: none;
+}
+
+#board form label {
+  cursor: url(img/cursor.cur), default;
+  transition: all 200ms linear;
+}
+
+td {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    background-color: #0007;
+    cursor: url(img/cursor.cur), default;
+    position: relative;
+}
+
+.player {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    filter: drop-shadow(1px 1px 1px #000);
+    transition: all 200ms ease-in;
+    opacity: 0;
+}
+
+#result_container {
+    width: 400px;
+    background-color: #000c;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+#result_container img {
+    width: 150px;
+    /* height: 175px; */
+    border-radius: 15px;
+    margin: 10px 0;
+}
+
+#result_container button {
+    cursor: url(img/cursor.cur), default;
+    letter-spacing: 2px;
+    background-color: orangered;
+    border: none;
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 20px;
+    font-family: "bank";
+    margin-top: 15px;
+}
+
+#result_container p {
+    letter-spacing: 5px;
+    font-size: 30px;
+    text-align: center;
+}
+
+#msg {
+  text-transform: capitalize;
+}
+
+.winner {
+  background-color: #fffa;
+  border-radius: 5px;
+}
+
+.purple {
+  color: purple;
+}
+
+.green {
+  color: green;
+}
+
+.mission-passed {
+  color: orange;
+  position: absolute;
+  top: 40%;
+  font-family: "pricedown";
+  font-size: 40px;
+  text-align: center;
+  opacity: 0;
+  transition: all 1s linear;
+}
+
+.mission-passed span {
+  color: #fff;
+  font-family: "pricedown";
+  text-align: center;
+}
+
+#menu {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  display: none;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+.menu-img-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+.menu-img-container > img {
+  width: 70%;
+  transition: all 500ms linear;
+}
+
+.menu-buttons {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  transition: all 100ms linear;
+  position: relative;
+  left: 0;
+  /* top: -72px; */
+}
+
+.menu-buttons button {
+  width: 140px;
+  height: 40px;
+  /* margin: 0 5px; */
+  border: none;
+  cursor: url(img/cursor.cur), default;
+  opacity: .5;
+}
+
+.menu-buttons button:hover {
+  width: 180px;
+  height: 80px;
+  padding: 0;
+  border: none;
+  opacity: 1;
+  transition: all 100ms linear;
+  /* position: relative; */
+}
+
+.menu-buttons button:nth-child(1) {
+  transform: rotate(6deg);
+}
+.menu-buttons button:nth-child(1):hover {
+  transform: rotate(12deg) !important;
+}
+
+.menu-buttons button:nth-child(2) {
+  transform: rotate(-6deg);
+}
+.menu-buttons button:nth-child(2):hover {
+  transform: rotate(-12deg) !important;
+}
+
+.menu-buttons button img {
+  width: 100%;
+  /* height: 100px; */
+  /* background-color: blue; */
+}
+
+#settings {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  background-image: url(./img/menu-bg1.jpg);
+  background-size: 720px;
+  background-repeat: no-repeat;
+  background-position: center right;
+  display: none;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;  
+}
+
+.screen-title {
+  font-family: "gta";
+  font-size: 80px;
+  color: #ccc;
+  position: absolute;
+  top: 0;
+  margin: 20px;
+}
+
+.screen-nav {
+  width: 50%;
+  margin: 50px;
+}
+
+.screen-nav .setting-option {
+  display: block;
+  margin: 20px 0;
+  background-color: transparent;
+  border: none;
+  font-family: "bank";
+  color: lightskyblue;
+  cursor: url(img/cursor.cur), default;
+  font-size: 30px;
+  position: relative;
+}
+
+
+.screen-nav > .setting-option:hover {
+  font-size: 32px;
+}
+
+.selector {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-image: url(./img/menu-selector.jpg);
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: brightness(1.2) hue-rotate(325deg);
+  position: absolute;
+  top: 5px;
+  left: -30px;
+}
+
+#start {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  
+  cursor: url(./img/cursor.cur), default;
+}
+
+#start img {
+  width: 90px;
+}
+
+#start video {
+  width: 500px;
+}
+
+.intro-text {
+  font-family: "gta";
+  color: lightskyblue;
+}
+
+.flashing-animation {
+  animation: flashing 4s linear infinite;
+}
+
+@keyframes flashing {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="js/script.js" defer type="module"></script>
+</head>
+
+<body>
+
+  <div id="start">
+    <p class="flashing-animation">Clique na tela para começar</p>
+    <img class="flashing-animation" src="./img/cursor_animation.gif" />
+    <!-- <video muted autoplay src="./video/intro.mp4"></video> -->
+  </div>
+
+  <div id="menu">
+    <div class="menu-img-container">
+      <img src="./img/menu-bg0.jpg" />
+    </div>
+    <nav class="menu-buttons">
+      <button data-js="menu-button">
+        <img src="./img/play-button.png" />
+      </button>
+      <button data-js="menu-button">
+        <img src="./img/settings-button.png" />
+      </button>
+    </nav>
+  </div>
+
+  <div id="settings">
+    <h2 class="screen-title">Configurações</h2>
+    <nav class="screen-nav">
+      <button class="setting-option" data-js="setting-option">Efeitos sonoros: ON</button>
+      <button class="setting-option" data-js="setting-option">Música: ON</button>
+      <button class="setting-option" data-js="setting-option">Wallpaper: Random</button>
+      <button class="setting-option" data-js="setting-option">Player inicial: Random</button>
+      <button class="setting-option" data-js="setting-option">Voltar</button>
+    </nav>
+  </div>
+
+  <div id="board" class="flex-center">
+    <form action="#" class="flex-center">
+      <label data-js="pc-label">
+        <input type="checkbox" id="cpu" name="cpu" value="SIM" />
+        Jogar contra o computador
+      </label>
+    </form>
+    <table>
+      <tbody>
+        <tr>
+          <td class="winner-stroke"><img class="player" src="img/transp.png" alt="imagem" id="c1" data-js="cell" /></td>
+          <td><img class="player" src="img/transp.png" alt="imagem" id="c2" data-js="cell" /></td>
+          <td><img class="player" src="img/transp.png" alt="imagem" id="c3" data-js="cell" /></td>
+        </tr>
+        <tr>
+          <td><img class="player" src="img/transp.png" alt="imagem" id="c4" data-js="cell" /></td>
+          <td><img class="player" src="img/transp.png" alt="imagem" id="c5" data-js="cell" /></td>
+          <td><img class="player" src="img/transp.png" alt="imagem" id="c6" data-js="cell" /></td>
+        </tr>
+        <tr>
+          <td><img class="player" src="img/transp.png" alt="imagem" id="c7" data-js="cell" /></td>
+          <td><img class="player" src="img/transp.png" alt="imagem" id="c8" data-js="cell" /></td>
+          <td><img class="player" src="img/transp.png" alt="imagem" id="c9" data-js="cell" /></td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="result_container" class="flex-center">
+      <p id="msg"></p>
+      <button data-js="reset">Restart</button>
+      <button onclick="location.reload()">Menu</button>
+    </div>
+  </div>
+
+
+</body>
+
+</html>
